@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transporte RD - Rutas y Mapa</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f3f3f3; }
+    header {
+      width: 100%;
+      background: #002d6b;
+      color: #fff;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 22px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav ul li a { text-decoration: none; color: #fff; font-weight: bold; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    .map-container {
+      margin: 20px auto;
+      max-width: 1000px;
+      width: 90%;
+      border: 2px solid #ddd;
+    }
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%; /* ratio 16:9 */
+      position: relative;
+      height: 0;
+    }
+    .map-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 0;
+    }
+
+    .routes {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .route {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .route h3 { color: #002d6b; margin-bottom: 8px; }
+    .route p { color: #333; }
+
+    footer {
+      background: #002d6b;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SIMUI RD</div>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Mapa de Rutas</a></li>
+      <li><a href="#">Horarios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="map-container">
+  <div class="map-responsive">
+    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d379498.01478137774!2d-70.07883379999999!3d18.480197699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89dd25c70b45%3A0x4da2bfe31abc4ed!2sDistrito%20Nacional!5e0!3m2!1ses-419!2sdo!4v1732967660000!5m2!1ses-419!2sdo" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy">
+</iframe>
+  </div>
+</div>
+
+<section class="routes">
+  <div class="route">
+    <h3>Metro</h3>
+    <p>Líneas: Línea 1, Línea 2, ... Descripción breve de rutas o paradas clave.</p>
+  </div>
+  <div class="route">
+    <h3>Teleférico</h3>
+    <p>Rutas del Teleférico, estaciones, horarios estimados, etc.</p>
+  </div>
+  <div class="route">
+    <h3>Corredores</h3>
+    <p>Nombres de corredores de transporte, paradas, frecuencias, etc.</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Proyecto final — Todos los derechos reservados
+</footer>
+
+</body>
+</html>
