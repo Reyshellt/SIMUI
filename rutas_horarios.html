@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rutas y Horarios Estáticos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#005BAA",
+              "secondary": "#009B3A",
+              "danger": "#D40026",
+              "background-light": "#FFFFFF",
+              "background-dark": "#101a22",
+              "surface-light": "#F4F6F8",
+              "surface-dark": "#18242f",
+              "text-primary-light": "#333333",
+              "text-primary-dark": "#F4F6F8",
+              "text-secondary-light": "#617989",
+              "text-secondary-dark": "#a0aec0",
+              "border-light": "#dbe1e6",
+              "border-dark": "#3a4a5a",
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">tram</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary-light dark:text-text-primary-dark">Sistema de Transporte</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark" href="index.html">Inicio</a>
+<a class="text-sm font-bold leading-normal text-primary" href="#">Rutas y Horarios</a>
+<a class="text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark" href="#">Noticias</a>
+<a class="text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark" href="#">Contacto</a>
+</div>
+<a href="inicio.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Iniciar Sesión</span>
+</a>
+</div>
+</header>
+<main class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-primary-light dark:text-text-primary-dark">Rutas y Horarios del Sistema</p>
+<p class="text-base font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Encuentra información detallada de todas las rutas y horarios del transporte público. Última actualización: 24 de Julio, 2024.</p>
+</div>
+</div>
+<div class="pb-3 sticky top-[65px] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<div class="flex border-b border-border-light dark:border-border-dark px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Metro</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark pb-[13px] pt-4 hover:text-primary" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Teleférico</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark pb-[13px] pt-4 hover:text-primary" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">OMSA</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark pb-[13px] pt-4 hover:text-primary" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Corredores</p>
+</a>
+</div>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex bg-surface-light dark:bg-surface-dark items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-primary-light dark:text-text-primary-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-surface-light dark:bg-surface-dark h-full placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark px-4 text-base font-normal leading-normal" placeholder="Filtrar por línea, estación o ruta..." value=""/>
+</div>
+</label>
+</div>
+<section>
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Información del Metro</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+<h3 class="font-bold text-lg mb-4 text-text-primary-light dark:text-text-primary-dark">Horario General</h3>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Lunes a Viernes:</span>
+<strong>6:00 AM - 10:30 PM</strong>
+</div>
+<div class="flex justify-between">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Sábados:</span>
+<strong>6:00 AM - 10:30 PM</strong>
+</div>
+<div class="flex justify-between">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Domingos y Feriados:</span>
+<strong>6:00 AM - 10:00 PM</strong>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+<h3 class="font-bold text-lg mb-4 text-text-primary-light dark:text-text-primary-dark">Frecuencia de Trenes</h3>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Hora Pico (7-9 AM, 4-7 PM):</span>
+<strong>Cada 1:30 minutos</strong>
+</div>
+<div class="flex justify-between">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Hora Valle (Resto del día):</span>
+<strong>Cada 3 - 5 minutos</strong>
+</div>
+<div class="flex justify-between">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Fines de Semana:</span>
+<strong>Cada 6 - 8 minutos</strong>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-8 p-4">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden">
+<div class="bg-primary/10 dark:bg-primary/20 p-4">
+<h3 class="font-bold text-lg text-primary">Línea 1 (L1)</h3>
+<p class="text-sm text-primary/80">Mamá Tingó - Centro de los Héroes</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark">
+<tr>
+<th class="p-4 font-semibold">#</th>
+<th class="p-4 font-semibold">Estación</th>
+<th class="p-4 font-semibold">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="p-4">1</td>
+<td class="p-4">Mamá Tingó</td>
+<td class="p-4"><span class="inline-flex items-center gap-2 text-secondary"><span class="material-symbols-outlined !text-base">check_circle</span> En Servicio</span></td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<td class="p-4">2</td>
+<td class="p-4">Gregorio Urbano Gilbert</td>
+<td class="p-4"><span class="inline-flex items-center gap-2 text-secondary"><span class="material-symbols-outlined !text-base">check_circle</span> En Servicio</span></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="p-4">3</td>
+<td class="p-4">Gregorio Luperón</td>
+<td class="p-4"><span class="inline-flex items-center gap-2 text-secondary"><span class="material-symbols-outlined !text-base">check_circle</span> En Servicio</span></td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark">
+<td class="p-4">... (13 más)</td>
+<td class="p-4"></td>
+<td class="p-4"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden">
+<div class="bg-secondary/10 dark:bg-secondary/20 p-4">
+<h3 class="font-bold text-lg text-secondary">Línea 2 (L2)</h3>
+<p class="text-sm text-secondary/80">María Montez - Concepción Bona</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark">
+<tr>
+<th class="p-4 font-semibold">#</th>
+<th class="p-4 font-semibold">Estación</th>
+<th class="p-4 font-semibold">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="p-4">1</td>
+<td class="p-4">María Montez</td>
+<td class="p-4"><span class="inline-flex items-center gap-2 text-secondary"><span class="material-symbols-outlined !text-base">check_circle</span> En Servicio</span></td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<td class="p-4">2</td>
+<td class="p-4">Pedro F. Bonó</td>
+<td class="p-4"><span class="inline-flex items-center gap-2 text-danger"><span class="material-symbols-outlined !text-base">cancel</span> Fuera de Servicio</span></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark">
+<td class="p-4">3</td>
+<td class="p-4">Francisco G. Billini</td>
+<td class="p-4"><span class="inline-flex items-center gap-2 text-secondary"><span class="material-symbols-outlined !text-base">check_circle</span> En Servicio</span></td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark">
+<td class="p-4">... (15 más)</td>
+<td class="p-4"></td>
+<td class="p-4"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="p-10 border-t border-border-light dark:border-border-dark mt-10 bg-surface-light dark:bg-surface-dark">
+<div class="max-w-[960px] mx-auto text-center text-text-secondary-light dark:text-text-secondary-dark text-sm">
+<p>© 2024 Sistema Integrado de Transporte Público de Santo Domingo. Todos los derechos reservados.</p>
+<div class="mt-4 flex justify-center gap-6">
+<a class="hover:text-primary" href="#">Términos de Servicio</a>
+<a class="hover:text-primary" href="#">Política de Privacidad</a>
+<a class="hover:text-primary" href="#">Contacto</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

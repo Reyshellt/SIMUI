@@ -1,116 +1,178 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transporte RD - Rutas y Mapa</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #f3f3f3; }
-    header {
-      width: 100%;
-      background: #002d6b;
-      color: #fff;
-      padding: 12px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo { font-size: 22px; font-weight: bold; }
-    nav ul { list-style: none; display: flex; gap: 25px; }
-    nav ul li a { text-decoration: none; color: #fff; font-weight: bold; }
-    nav ul li a:hover { text-decoration: underline; }
 
-    .map-container {
-      margin: 20px auto;
-      max-width: 1000px;
-      width: 90%;
-      border: 2px solid #ddd;
-    }
-    .map-responsive {
-      overflow: hidden;
-      padding-bottom: 56.25%; /* ratio 16:9 */
-      position: relative;
-      height: 0;
-    }
-    .map-responsive iframe {
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      border: 0;
-    }
-
-    .routes {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .route {
-      background: white;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .route h3 { color: #002d6b; margin-bottom: 8px; }
-    .route p { color: #333; }
-
-    footer {
-      background: #002d6b;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Landing Page del Servicio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1392ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101a22",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 </head>
-<body>
-
-<header>
-  <div class="logo">SIMUI RD</div>
-  <nav>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Mapa de Rutas</a></li>
-      <li><a href="#">Horarios</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="map-container">
-  <div class="map-responsive">
-    <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d379498.01478137774!2d-70.07883379999999!3d18.480197699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89dd25c70b45%3A0x4da2bfe31abc4ed!2sDistrito%20Nacional!5e0!3m2!1ses-419!2sdo!4v1732967660000!5m2!1ses-419!2sdo" 
-  width="100%" 
-  height="450" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy">
-</iframe>
-  </div>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex w-full justify-center border-b border-solid border-gray-200/50 dark:border-gray-700/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex w-full max-w-6xl items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-3">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-
-<section class="routes">
-  <div class="route">
-    <h3>Metro</h3>
-    <p>Líneas: Línea 1, Línea 2, ... Descripción breve de rutas o paradas clave.</p>
-  </div>
-  <div class="route">
-    <h3>Teleférico</h3>
-    <p>Rutas del Teleférico, estaciones, horarios estimados, etc.</p>
-  </div>
-  <div class="route">
-    <h3>Corredores</h3>
-    <p>Nombres de corredores de transporte, paradas, frecuencias, etc.</p>
-  </div>
+<h2 class="text-lg font-bold tracking-[-0.015em]">MetroSDQ</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Características</a>
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="rutas_horarios.html">Rutas y Horarios</a>
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Sobre Nosotros</a>
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+<a href="inicio.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Comenzar</span> 
+</a>
+</div>
+<div class="md:hidden">
+<button class="p-2 rounded-md text-gray-800 dark:text-gray-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col items-center w-full">
+<div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+<section class="py-16 sm:py-24">
+<div class="flex min-h-[480px] flex-col gap-6 rounded-xl bg-cover bg-center bg-no-repeat items-start justify-end px-6 pb-10 sm:px-10" data-alt="Modern metro train arriving at a station in Santo Domingo" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHZdMKFCjIxS0yTA3iwVySjqtRKZTPdaoWS1rkIINQBeeJGlbjzaF4-bFMG4-GQlF_80FTwGGx695CdAaCHtpDcC6dTfdMJVrwDCORbepa7Jh4ZjwWTftGW8AWWYnp76VyzBkmbcAAD2vuqae0w_svdBeA-lr3xKS5PuD8au2pMIalV3og46bfScuigzbX9duY73nXpJrl2XIZMvhGTgw3_o4_-slhdprZY5UM9ZQ0r4DixBpbQ9ZXRpYCobQXnjr2bqSiEOj7jbI");'>
+<div class="flex flex-col gap-2 text-left max-w-2xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl">Revoluciona tu Viaje en Santo Domingo</h1>
+<h2 class="text-white/90 text-sm font-normal leading-normal sm:text-base">El primer servicio digital que integra Metro, Teleférico, OMSA y Corredores de Autobuses para un viaje sin interrupciones.</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 sm:h-12 sm:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] sm:text-base hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Planifica Tu Viaje Ahora</span>
+</button>
+</div>
 </section>
-
-<footer>
-  © 2025 Proyecto final — Todos los derechos reservados
+<section class="py-12 text-center flex flex-col items-center">
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">La Forma Inteligente de Navegar por la Ciudad</h2>
+<p class="mt-4 max-w-3xl text-base font-normal leading-normal text-gray-600 dark:text-gray-400">¿Cansado de adivinar rutas y esperar sin fin? Nuestra plataforma reúne todo el transporte público de Santo Domingo en un solo lugar, haciendo tu viaje más simple, rápido y predecible. Bienvenido al futuro de la movilidad urbana.</p>
+</section>
+<section class="py-16 sm:py-24">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-4 max-w-3xl">
+<h1 class="text-gray-900 dark:text-white tracking-tight text-3xl font-bold leading-tight sm:text-4xl sm:font-black">Todo lo que Necesitas para tu Viaje</h1>
+<p class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal">Explora las potentes funciones diseñadas para mejorar tu experiencia de viaje de principio a fin.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-background-dark/50 p-6">
+<div class="text-primary"><span class="material-symbols-outlined text-4xl">location_on</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Seguimiento en Tiempo Real</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Mira exactamente dónde está tu autobús o tren en el mapa y obtén horas de llegada precisas.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-background-dark/50 p-6">
+<div class="text-primary"><span class="material-symbols-outlined text-4xl">route</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Planificador de Rutas Multimodal</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Encuentra la ruta más rápida y eficiente usando cualquier combinación de transporte.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-background-dark/50 p-6">
+<div class="text-primary"><span class="material-symbols-outlined text-4xl">credit_card</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Información y Recargas</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Consulta tu saldo, ve los detalles de las tarifas y recarga tu tarjeta directamente desde la app.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-background-dark/50 p-6">
+<div class="text-primary"><span class="material-symbols-outlined text-4xl">notifications</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Alertas de Servicio</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Recibe notificaciones instantáneas sobre retrasos, cambios de horario o interrupciones.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="w-full bg-white dark:bg-gray-900/50 py-16 sm:py-24 mt-8 flex justify-center">
+<div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Una Ciudad, Un Sistema</h2>
+<p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">Visualiza toda la red de transporte de Santo Domingo integrada para ti.</p>
+</div>
+<div class="relative rounded-xl overflow-hidden">
+<img alt="Stylized map of Santo Domingo showing integrated public transport routes" class="w-full h-auto object-cover max-h-[600px]" data-location="Santo Domingo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzLd-2ejC4mOi0vULLlX0zfq5GdtjS1fFMRfJ768P4qWSl-ut053DBciHA8RbcxQ1zp39y29BMcVSqSsGtgR6Ook9uSwcfErHp4jlEHVRNYakQoNpKv7wYsknVvN9NApx1CGyLjFQbIzjQTfFimPPSvW1qtoKZP4Z9LZFCTkYdpYMqsjLgKV3aZN0EcplO_9tTwHZFM5qYZcWl5YXJl6u_NpBAHX42ZbjDDu11rV6dQU0PT58hFdVOBBaoP7GmiB2coTblZXnWGbY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+<section class="py-16 sm:py-24">
+<div class="bg-primary/10 dark:bg-primary/20 rounded-xl p-8 sm:p-16 text-center">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">¿Listo para Transformar tu Viaje?</h2>
+<p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-300">Únete a miles de usuarios que ya disfrutan de una forma más inteligente de moverse por la ciudad.</p>
+<div class="mt-10 flex items-center justify-center gap-x-6">
+<button class="rounded-lg bg-primary px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-opacity">
+                                    Comenzar Gratis
+                                </button>
+<a class="text-base font-semibold leading-6 text-gray-900 dark:text-white" href="#">Saber más <span aria-hidden="true">→</span></a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="w-full border-t border-gray-200 dark:border-gray-700/50 mt-16 bg-white dark:bg-background-dark">
+<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold">MetroSDQ</h2>
+</div>
+<div class="flex gap-x-8">
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">Política de Privacidad</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">Términos de Servicio</a>
+</div>
+<div class="flex gap-x-6">
+<!-- Social Icons could go here -->
+</div>
+</div>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">© 2024 MetroSDQ. Todos los derechos reservados.</p>
+</div>
 </footer>
-
-</body>
-</html>
+</div>
+</div>
+</body></html>
