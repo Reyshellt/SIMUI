@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gestión de Favoritos/Rutas Favoritas</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1392ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101a22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+        <div class="flex min-h-screen">
+
+            <aside class="flex w-64 flex-col border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-background-dark">
+                <div class="flex flex-col gap-4">
+
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="Logo del Sistema de Transporte"
+                            style='background-image: url("img/SIMUI.PNG");'>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h1 class="text-[#111518] text-base font-bold dark:text-white">Juan Pérez</h1>
+                            <p class="text-[#617989] text-sm font-normal dark:text-slate-400">Usuario de SIMUI</p>
+                        </div>
+                    </div>
+
+                    <nav class="flex flex-col gap-2 mt-4">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="dashboard.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">dashboard</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Dashboard</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="planificar_ruta.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">route</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Planificador de Rutas</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="vista_mapa.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">map</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Vista de Mapa</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20" href="#">
+                            <span class="material-symbols-outlined fill text-primary dark:text-primary">star</span>
+                            <p class="text-primary text-sm font-medium">Favoritos</p>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="flex flex-col gap-1 mt-auto">
+
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                        href="perfil.html">
+                        <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">account_circle</span>
+                        <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Perfil</p>
+                    </a>
+
+                    <div class="border-t border-gray-200 dark:border-white/10 mt-auto pt-4 flex flex-col gap-1">
+                        <a href="inicio.html"
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 cursor-pointer">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-gray-300 text-2xl">logout</span>
+                            <p class="text-[#111518] dark:text-gray-300 text-sm font-medium leading-normal">Cerrar Sesión</p>
+                        </a>
+                    </div>
+
+                </div>
+            </aside>
+
+            <main class="flex-1 p-8">
+                <div class="flex flex-col gap-8">
+
+                    <div class="flex flex-wrap justify-between gap-4 items-center">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <p class="text-[#111518] text-4xl font-black leading-tight tracking-[-0.033em] dark:text-white">
+                                Rutas Favoritas
+                            </p>
+                            <p class="text-[#617989] text-base font-normal leading-normal dark:text-slate-400">
+                                Gestiona tus rutas guardadas para un acceso rápido y sencillo.
+                            </p>
+                        </div>
+
+                        <a href="planificar_ruta.html"
+                            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white gap-2 pl-4 text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600">
+                            <span class="material-symbols-outlined">add</span>
+                            <span class="truncate">Añadir Nueva Ruta</span>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col gap-6">
+                        <div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
+
+                            <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-6 dark:text-white">
+                                Mis Rutas
+                            </h2>
+
+                            <div class="flex flex-col gap-4">
+
+                                <!-- RUTA 1 -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-lg border border-slate-200 dark:border-slate-800">
+                                    <div class="flex items-center gap-4 flex-1">
+                                        <span class="material-symbols-outlined fill text-amber-500 text-3xl">star</span>
+
+                                        <div class="flex-1">
+                                            <h3 class="text-[#111518] font-bold text-lg dark:text-white">Casa al Trabajo</h3>
+
+                                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 mt-1 text-sm">
+                                                <span class="material-symbols-outlined text-base">trip_origin</span>
+                                                <p>Av. Winston Churchill</p>
+
+                                                <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+
+                                                <span class="material-symbols-outlined text-base">location_on</span>
+                                                <p>Av. John F. Kennedy</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-2 self-end md:self-center">
+                                        <button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                                            <span class="material-symbols-outlined">edit</span>
+                                        </button>
+
+                                        <button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                                            <span class="material-symbols-outlined">delete</span>
+                                        </button>
+
+                                        <a href="detalles_ruta.html"
+                                            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-600">
+                                            <span class="material-symbols-outlined text-base">navigation</span>
+                                            <span class="truncate">Iniciar</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- RUTA 2 -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-lg border border-slate-200 dark:border-slate-800">
+                                    <div class="flex items-center gap-4 flex-1">
+                                        <span class="material-symbols-outlined fill text-amber-500 text-3xl">star</span>
+
+                                        <div class="flex-1">
+                                            <h3 class="text-[#111518] font-bold text-lg dark:text-white">Gimnasio</h3>
+
+                                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 mt-1 text-sm">
+                                                <span class="material-symbols-outlined text-base">trip_origin</span>
+                                                <p>Av. Winston Churchill</p>
+
+                                                <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+
+                                                <span class="material-symbols-outlined text-base">location_on</span>
+                                                <p>Body Shop Athletic Club</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-2 self-end md:self-center">
+                                        <button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                                            <span class="material-symbols-outlined">edit</span>
+                                        </button>
+
+                                        <button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                                            <span class="material-symbols-outlined">delete</span>
+                                        </button>
+
+                                        <a href="detalles_ruta.html"
+                                            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-600">
+                                            <span class="material-symbols-outlined text-base">navigation</span>
+                                            <span class="truncate">Iniciar</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- RUTA 3 -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-lg border border-slate-200 dark:border-slate-800">
+                                    <div class="flex items-center gap-4 flex-1">
+                                        <span class="material-symbols-outlined fill text-amber-500 text-3xl">star</span>
+
+                                        <div class="flex-1">
+                                            <h3 class="text-[#111518] font-bold text-lg dark:text-white">Universidad</h3>
+
+                                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 mt-1 text-sm">
+                                                <span class="material-symbols-outlined text-base">trip_origin</span>
+                                                <p>Estación Juan Bosch</p>
+
+                                                <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+
+                                                <span class="material-symbols-outlined text-base">location_on</span>
+                                                <p>Universidad INTEC</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-2 self-end md:self-center">
+                                        <button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                                            <span class="material-symbols-outlined">edit</span>
+                                        </button>
+
+                                        <button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                                            <span class="material-symbols-outlined">delete</span>
+                                        </button>
+
+                                        <a href="detalles_ruta.html"
+                                            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-600">
+                                            <span class="material-symbols-outlined text-base">navigation</span>
+                                            <span class="truncate">Iniciar</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+</body>
+
+</html>

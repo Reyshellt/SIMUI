@@ -1,13 +1,19 @@
 <!DOCTYPE html>
+<html class="light" lang="es">
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dashboard Principal</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard Principal</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -30,178 +36,324 @@
             },
         }
     </script>
-<style>
+
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .material-symbols-outlined.fill {
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
+
 <body class="font-display bg-background-light dark:bg-background-dark">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
-<div class="flex min-h-screen">
-<!-- SideNavBar -->
-<aside class="flex w-64 flex-col border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-background-dark">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Logo del Metro Santo Domingo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAO8Qqc0-BkPs7N5pKHaTx-AHmBGHmqEOtxnBUZVr75psRSSnYE8ZVFU7P383Zk2ZWtB5ANcpHLuYgs5vPNCvBbXB1LnaUTCqgCLzOwh3oXjCuO2eKwXfs7AGZekzgX_o-ACHy1MLgdd5A51yTq819B1VHIYtAr2xYL3Duj9I8upHj9FN8wGxnGNYuEQ_teV8IlInl0zDH2vHFghzAwZHIgoAWxPR6ZfzAFYE4jt4pe1WHt-xfdxGieuzJ85U0VEARXMHYQLc1V1Fk");'></div>
-<div class="flex flex-col">
-<h1 class="text-[#111518] text-base font-bold dark:text-white">Metro Santo Domingo</h1>
-<p class="text-[#617989] text-sm font-normal dark:text-slate-400">Sistema de Transporte</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2 mt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20" href="#">
-<span class="material-symbols-outlined fill text-primary dark:text-primary">dashboard</span>
-<p class="text-primary text-sm font-medium">Dashboard</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
-<span class="material-symbols-outlined text-[#111518] dark:text-slate-300">route</span>
-<p class="text-[#111518] text-sm font-medium dark:text-slate-300">Planificador de Rutas</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
-<span class="material-symbols-outlined text-[#111518] dark:text-slate-300">map</span>
-<p class="text-[#111518] text-sm font-medium dark:text-slate-300">Vista de Mapa</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
-<span class="material-symbols-outlined text-[#111518] dark:text-slate-300">notifications</span>
-<p class="text-[#111518] text-sm font-medium dark:text-slate-300">Alertas</p>
-</a>
-</nav>
-</div>
-<div class="flex flex-col gap-1 mt-auto">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
-<span class="material-symbols-outlined text-[#111518] dark:text-slate-300">account_circle</span>
-<p class="text-[#111518] text-sm font-medium dark:text-slate-300">Perfil</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
-<span class="material-symbols-outlined text-[#111518] dark:text-slate-300">settings</span>
-<p class="text-[#111518] text-sm font-medium dark:text-slate-300">Configuración</p>
-</a>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="flex-1 p-8">
-<div class="flex flex-col gap-8">
-<!-- PageHeading -->
-<div class="flex flex-wrap justify-between gap-3">
-<div class="flex min-w-72 flex-col gap-2">
-<p class="text-[#111518] text-4xl font-black leading-tight tracking-[-0.033em] dark:text-white">Dashboard Principal</p>
-<p class="text-[#617989] text-base font-normal leading-normal dark:text-slate-400">Vista general en tiempo real del sistema de transporte de Santo Domingo.</p>
-</div>
-</div>
-<!-- Main grid -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<!-- Left column -->
-<div class="lg:col-span-2 flex flex-col gap-6">
-<!-- Route Planner Card -->
-<div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
-<h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">Planifica tu Viaje</h2>
-<div class="flex flex-col md:flex-row gap-4 items-end">
-<label class="flex flex-col min-w-40 flex-1">
-<p class="text-[#111518] text-base font-medium leading-normal pb-2 dark:text-slate-300">Desde</p>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">trip_origin</span>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111518] focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#dbe1e6] bg-white dark:bg-slate-800 dark:border-slate-700 dark:text-white h-14 placeholder:text-[#617989] dark:placeholder:text-slate-500 pl-11 pr-4 text-base font-normal" placeholder="Introduce un punto de partida" value="Av. John F. Kennedy"/>
-</div>
-</label>
-<label class="flex flex-col min-w-40 flex-1">
-<p class="text-[#111518] text-base font-medium leading-normal pb-2 dark:text-slate-300">Hasta</p>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111518] focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#dbe1e6] bg-white dark:bg-slate-800 dark:border-slate-700 dark:text-white h-14 placeholder:text-[#617989] dark:placeholder:text-slate-500 pl-11 pr-4 text-base font-normal" placeholder="Introduce un destino" value=""/>
-</div>
-</label>
-<button class="flex w-full md:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 bg-primary text-white gap-2 pl-5 text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600">
-<span class="material-symbols-outlined text-white">search</span>
-<span class="truncate">Buscar Ruta</span>
-</button>
-</div>
-</div>
-<!-- System Status Card -->
-<div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
-<h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">Estado del Sistema en Vivo</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
-<div class="flex items-center justify-center size-12 rounded-full bg-green-100 dark:bg-green-900/50">
-<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">tram</span>
-</div>
-<div>
-<p class="font-semibold text-slate-800 dark:text-slate-200">Metro - Línea 1</p>
-<p class="text-sm text-green-600 dark:text-green-400 font-medium">Servicio Normal</p>
-</div>
-</div>
-<div class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
-<div class="flex items-center justify-center size-12 rounded-full bg-green-100 dark:bg-green-900/50">
-<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">tram</span>
-</div>
-<div>
-<p class="font-semibold text-slate-800 dark:text-slate-200">Metro - Línea 2</p>
-<p class="text-sm text-green-600 dark:text-green-400 font-medium">Servicio Normal</p>
-</div>
-</div>
-<div class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
-<div class="flex items-center justify-center size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/50">
-<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-3xl">cable</span>
-</div>
-<div>
-<p class="font-semibold text-slate-800 dark:text-slate-200">Teleférico</p>
-<p class="text-sm text-yellow-600 dark:text-yellow-400 font-medium">Ligeros Retrasos</p>
-</div>
-</div>
-<div class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
-<div class="flex items-center justify-center size-12 rounded-full bg-green-100 dark:bg-green-900/50">
-<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">directions_bus</span>
-</div>
-<div>
-<p class="font-semibold text-slate-800 dark:text-slate-200">OMSA - Corredor 27</p>
-<p class="text-sm text-green-600 dark:text-green-400 font-medium">Servicio Normal</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Right column -->
-<div class="lg:col-span-1 flex flex-col gap-6">
-<!-- Map Widget -->
-<div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
-<h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">Mapa en Tiempo Real</h2>
-<div class="aspect-video w-full rounded-lg bg-slate-200 dark:bg-slate-800 overflow-hidden">
-<div class="h-full w-full bg-cover bg-center" data-alt="Mapa de la ciudad de Santo Domingo con rutas de transporte público superpuestas." data-location="Santo Domingo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEhrVye_ZJCKEreT9bj7rpKQxMCAf-lIQqGTplm3szMzstYVvEfQ0S-TMYmK--QlROBraKpkeXBovfTGt3jYUgjWn9gbB19QIQaAbxJ95Tm6xNtvI5h52zF48QSknyRZ_jbQY0LolmvhWJV842mdKBHrHebq0VRJvOFdykN1ydYP3cMVAfqh9XdvJBolI9DKi4hPvaAc4q0Wu2q5rhh2GNOp2n-eRxh5IE-w2oevMEi938fL3xxhyRKNWUbmFKWiYB02QvKcbArpw');"></div>
-</div>
-</div>
-<!-- Live Alerts Card -->
-<div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
-<h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">Últimas Alertas</h2>
-<div class="flex flex-col gap-4">
-<div class="flex items-start gap-3">
-<div class="flex items-center justify-center size-8 rounded-full bg-red-100 dark:bg-red-900/50 mt-1">
-<span class="material-symbols-outlined text-red-600 dark:text-red-400 text-xl">error</span>
-</div>
-<div>
-<p class="font-medium text-slate-800 dark:text-slate-200">Interrupción en Línea 2</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">Servicio suspendido entre las estaciones M. de Js. Galván y Cnel. R. T. Fernández D.</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">hace 5 min</p>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<div class="flex items-center justify-center size-8 rounded-full bg-yellow-100 dark:bg-yellow-900/50 mt-1">
-<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-xl">warning</span>
-</div>
-<div>
-<p class="font-medium text-slate-800 dark:text-slate-200">Retraso en Teleférico</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">Debido a condiciones climáticas, la operación presenta ligeros retrasos.</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">hace 25 min</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+        <div class="flex min-h-screen">
+
+            <!-- SideNavBar -->
+            <aside class="flex w-64 flex-col border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-background-dark">
+
+                <div class="flex flex-col gap-4">
+
+                    <!-- Usuario -->
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="Logo del Sistema de Transporte" style='background-image: url("img/SIMUI.PNG");'>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h1 class="text-[#111518] text-base font-bold dark:text-white">Juan Pérez</h1>
+                            <p class="text-[#617989] text-sm font-normal dark:text-slate-400">Usuario de SIMUI</p>
+                        </div>
+                    </div>
+
+                    <!-- Navegación -->
+                    <nav class="flex flex-col gap-2 mt-4">
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20"
+                            href="#">
+                            <span class="material-symbols-outlined fill text-primary dark:text-primary">dashboard</span>
+                            <p class="text-primary text-sm font-medium">Dashboard</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="planificar_ruta.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">route</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Planificador de Rutas</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="vista_mapa.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">map</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Vista de Mapa</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="favoritos.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">star</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Favoritos</p>
+                        </a>
+
+                    </nav>
+                </div>
+
+                <!-- Parte inferior -->
+                <div class="flex flex-col gap-1 mt-auto">
+
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                        href="perfil.html">
+                        <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">account_circle</span>
+                        <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Perfil</p>
+                    </a>
+
+                    <div class="border-t border-gray-200 dark:border-white/10 mt-auto pt-4 flex flex-col gap-1">
+                        <a href="inicio.html"
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 cursor-pointer">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-gray-300 text-2xl">logout</span>
+                            <p class="text-[#111518] dark:text-gray-300 text-sm font-medium leading-normal">Cerrar Sesión</p>
+                        </a>
+                    </div>
+
+                </div>
+
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 p-8">
+                <div class="flex flex-col gap-8">
+
+                    <!-- Page Heading -->
+                    <div class="flex flex-wrap justify-between gap-3">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <p class="text-[#111518] text-4xl font-black leading-tight tracking-[-0.033em] dark:text-white">
+                                Dashboard Principal
+                            </p>
+                            <p class="text-[#617989] text-base font-normal leading-normal dark:text-slate-400">
+                                Vista general en tiempo real del sistema de transporte de Santo Domingo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Main Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                        <!-- Left Column -->
+                        <div class="lg:col-span-2 flex flex-col gap-6">
+
+                            <!-- Route Planner Card -->
+                            <div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
+                                <h2
+                                    class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">
+                                    Planifica tu Viaje
+                                </h2>
+
+                                <div class="flex flex-col md:flex-row gap-4 items-end">
+
+                                    <!-- Desde -->
+                                    <label class="flex flex-col min-w-40 flex-1">
+                                        <p class="text-[#111518] text-base font-medium pb-2 dark:text-slate-300">Desde</p>
+                                        <div class="relative">
+                                            <span
+                                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                                                trip_origin
+                                            </span>
+                                            <input
+                                                class="form-input flex w-full rounded-lg text-[#111518] h-14 border border-[#dbe1e6] bg-white pl-11 pr-4 dark:bg-slate-800 dark:border-slate-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50"
+                                                placeholder="Introduce un punto de partida" value="Av. John F. Kennedy" />
+                                        </div>
+                                    </label>
+
+                                    <!-- Hasta -->
+                                    <label class="flex flex-col min-w-40 flex-1">
+                                        <p class="text-[#111518] text-base font-medium pb-2 dark:text-slate-300">Hasta</p>
+                                        <div class="relative">
+                                            <span
+                                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                                                location_on
+                                            </span>
+                                            <input
+                                                class="form-input flex w-full rounded-lg text-[#111518] h-14 border border-[#dbe1e6] bg-white pl-11 pr-4 dark:bg-slate-800 dark:border-slate-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50"
+                                                placeholder="Introduce un destino" />
+                                        </div>
+                                    </label>
+
+                                    <!-- Button -->
+                                    <button
+                                        class="flex w-full md:w-auto items-center justify-center rounded-lg h-14 px-5 bg-primary text-white gap-2 font-bold hover:bg-blue-600">
+                                        <span class="material-symbols-outlined text-white">search</span>
+                                        <span class="truncate">Buscar Ruta</span>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <!-- System Status -->
+                            <div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
+                                <h2
+                                    class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">
+                                    Estado del Sistema en Vivo
+                                </h2>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                                    <!-- Metro 1 -->
+                                    <div
+                                        class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+                                        <div
+                                            class="flex items-center justify-center size-12 rounded-full bg-green-100 dark:bg-green-900/50">
+                                            <span
+                                                class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">
+                                                tram
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-slate-800 dark:text-slate-200">Metro - Línea 1</p>
+                                            <p class="text-sm text-green-600 dark:text-green-400 font-medium">Servicio
+                                                Normal</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Metro 2 -->
+                                    <div
+                                        class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+                                        <div
+                                            class="flex items-center justify-center size-12 rounded-full bg-green-100 dark:bg-green-900/50">
+                                            <span
+                                                class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">
+                                                tram
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-slate-800 dark:text-slate-200">Metro - Línea 2</p>
+                                            <p class="text-sm text-green-600 dark:text-green-400 font-medium">Servicio
+                                                Normal</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Teleférico -->
+                                    <div
+                                        class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+                                        <div
+                                            class="flex items-center justify-center size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/50">
+                                            <span
+                                                class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-3xl">
+                                                cable
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-slate-800 dark:text-slate-200">Teleférico</p>
+                                            <p class="text-sm text-yellow-600 dark:text-yellow-400 font-medium">Ligeros
+                                                Retrasos</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- OMSA -->
+                                    <div
+                                        class="flex items-center gap-4 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+                                        <div
+                                            class="flex items-center justify-center size-12 rounded-full bg-green-100 dark:bg-green-900/50">
+                                            <span
+                                                class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">
+                                                directions_bus
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-slate-800 dark:text-slate-200">OMSA - Corredor 27</p>
+                                            <p class="text-sm text-green-600 dark:text-green-400 font-medium">Servicio
+                                                Normal</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="lg:col-span-1 flex flex-col gap-6">
+
+                            <!-- Map Widget -->
+                            <div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
+                                <h2
+                                    class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">
+                                    Mapa en Tiempo Real
+                                </h2>
+
+                                <div
+                                    class="aspect-video w-full rounded-lg bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                                    <div class="h-full w-full bg-cover bg-center"
+                                        data-alt="Mapa de la ciudad de Santo Domingo con rutas de transporte público superpuestas."
+                                        data-location="Santo Domingo"
+                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEhrVye_ZJCKEreT9bj7rpKQxMCAf-lIQqGTplm3szMzstYVvEfQ0S-TMYmK--QlROBraKpkeXBovfTGt3jYUgjWn9gbB19QIQaAbxJ95Tm6xNtvI5h52zF48QSknyRZ_jbQY0LolmvhWJV842mdKBHrHebq0VRJvOFdykN1ydYP3cMVAfqh9XdvJBolI9DKi4hPvaAc4q0Wu2q5rhh2GNOp2n-eRxh5IE-w2oevMEi938fL3xxhyRKNWUbmFKWiYB02QvKcbArpw');">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Alerts -->
+                            <div class="bg-white rounded-xl p-6 dark:bg-background-dark dark:border dark:border-slate-800">
+                                <h2
+                                    class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">
+                                    Últimas Alertas
+                                </h2>
+
+                                <div class="flex flex-col gap-4">
+
+                                    <!-- Alerta 1 -->
+                                    <div class="flex items-start gap-3">
+                                        <div
+                                            class="flex items-center justify-center size-8 rounded-full bg-red-100 dark:bg-red-900/50 mt-1">
+                                            <span
+                                                class="material-symbols-outlined text-red-600 dark:text-red-400 text-xl">
+                                                error
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-slate-800 dark:text-slate-200">Interrupción en Línea
+                                                2</p>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">
+                                                Servicio suspendido entre las estaciones M. de Js. Galván y Cnel. R. T.
+                                                Fernández D.
+                                            </p>
+                                            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">hace 5 min</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alerta 2 -->
+                                    <div class="flex items-start gap-3">
+                                        <div
+                                            class="flex items-center justify-center size-8 rounded-full bg-yellow-100 dark:bg-yellow-900/50 mt-1">
+                                            <span
+                                                class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-xl">
+                                                warning
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-slate-800 dark:text-slate-200">Retraso en
+                                                Teleférico</p>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">
+                                                Debido a condiciones climáticas, la operación presenta ligeros retrasos.
+                                            </p>
+                                            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">hace 25 min</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

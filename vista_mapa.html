@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vista de Mapa</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1392ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101a22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+        <div class="flex min-h-screen">
+            <aside class="flex w-64 flex-col border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-background-dark">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Logo del Sistema de Transporte" style='background-image: url("img/SIMUI.PNG");'></div>
+                        <div class="flex flex-col">
+                            <h1 class="text-[#111518] text-base font-bold dark:text-white">Juan Pérez</h1>
+                            <p class="text-[#617989] text-sm font-normal dark:text-slate-400">Usuario de SIMUI</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2 mt-4">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="dashboard.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">dashboard</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="planificar_ruta.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">route</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Planificador de Rutas</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20" href="vista_mapa.html">
+                            <span class="material-symbols-outlined fill text-primary dark:text-primary">map</span>
+                            <p class="text-primary text-sm font-medium">Vista de Mapa</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="favoritos.html">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">star</span>
+                            <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Favoritos</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1 mt-auto">
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="perfil.html">
+                        <span class="material-symbols-outlined text-[#111518] dark:text-slate-300">account_circle</span>
+                        <p class="text-[#111518] text-sm font-medium dark:text-slate-300">Perfil</p>
+                    </a>
+                    <div class="border-t border-gray-200 dark:border-white/10 mt-auto pt-4 flex flex-col gap-1">
+                        <a href="inicio.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 cursor-pointer">
+                            <span class="material-symbols-outlined text-[#111518] dark:text-gray-300 text-2xl">logout</span>
+                            <p class="text-[#111518] dark:text-gray-300 text-sm font-medium leading-normal">Cerrar Sesión</p>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+            <main class="flex-1 p-8">
+                <div class="flex flex-col gap-8 h-full">
+                    <div class="flex flex-wrap justify-between gap-3">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <p class="text-[#111518] text-4xl font-black leading-tight tracking-[-0.033em] dark:text-white">Vista de Mapa</p>
+                            <p class="text-[#617989] text-base font-normal leading-normal dark:text-slate-400">Ubicación en tiempo real de los transportes del Gran Santo Domingo.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex-1 rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 -mx-8 -mb-8">
+                        <div class="h-full w-full bg-cover bg-center" data-alt="Mapa interactivo a gran escala de Santo Domingo con la ubicación en tiempo real de los diferentes transportes." data-location="Santo Domingo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEhrVye_ZJCKEreT9bj7rpKQxMCAf-lIQqGTplm3szMzstYVvEfQ0S-TMYmK--QlROBraKpkeXBovfTGt3jYUgjWn9gbB19QIQaAbxJ95Tm6xNtvI5h52zF48QSknyRZ_jbQY0LolmvhWJV842mdKBHrHebq0VRJvOFdykN1ydYP3cMVAfqh9XdvJBolI9DKi4hPvaAc4q0Wu2q5rhh2GNOp2n-eRxh5IE-w2oevMEi938fL3xxhyRKNWUbmFKWiYB02QvKcbArpw');"></div>
+                        <div class="absolute top-6 left-6 w-80 bg-white dark:bg-background-dark rounded-xl shadow-lg p-6 border border-slate-200 dark:border-slate-800">
+                            <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] mb-4 dark:text-white">Filtrar por Transporte</h2>
+                            <div class="flex flex-col gap-4">
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <span class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-red-600 dark:text-red-500">tram</span>
+                                        <span class="text-slate-800 dark:text-slate-200 font-medium">Metro</span>
+                                    </span>
+                                    <input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+                                </label>
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <span class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500">cable</span>
+                                        <span class="text-slate-800 dark:text-slate-200 font-medium">Teleférico</span>
+                                    </span>
+                                    <input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+                                </label>
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <span class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-blue-600 dark:text-blue-500">directions_bus</span>
+                                        <span class="text-slate-800 dark:text-slate-200 font-medium">OMSA</span>
+                                    </span>
+                                    <input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+                                </label>
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <span class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-600 dark:text-green-500">directions_bus</span>
+                                        <span class="text-slate-800 dark:text-slate-200 font-medium">Corredores</span>
+                                    </span>
+                                    <input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-6 left-6 bg-white dark:bg-background-dark rounded-xl shadow-lg p-4 border border-slate-200 dark:border-slate-800">
+                            <h3 class="text-[#111518] text-sm font-bold mb-2 dark:text-white">Leyenda</h3>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-600 dark:bg-red-500"></div>
+                                    <span class="text-xs text-slate-600 dark:text-slate-300">Metro</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-600 dark:bg-yellow-500"></div>
+                                    <span class="text-xs text-slate-600 dark:text-slate-300">Teleférico</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-blue-600 dark:bg-blue-500"></div>
+                                    <span class="text-xs text-slate-600 dark:text-slate-300">OMSA</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-green-600 dark:bg-green-500"></div>
+                                    <span class="text-xs text-slate-600 dark:text-slate-300">Corredores</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
